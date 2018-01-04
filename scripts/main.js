@@ -32,3 +32,10 @@ var btn = document.getElementById('btn');
 btn.addEventListener('click', function() {
   alert('Number of options selected: ' + howMany(document.selectForm.loremTypes));
 });
+
+var snd = document.getElementById("myAirHorn");
+
+function playAudio() {
+  snd.play();
+  snd.currentTime=0;
+}
