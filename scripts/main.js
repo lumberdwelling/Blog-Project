@@ -78,18 +78,9 @@ function playAudio() {
   window.__twitterIntentHandler = true;
 }());
 
-$( document ).ready(function()
-                    { $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function(json)
-                                { $("#quote").html((json.value)); updateTweet(json)});
-                               });
-$("#button").on("click", function() {
-        $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function(json) {
-          $("#quote").html((json.value));
-          updateTweet(json);
-        });
-});
-
-function updateTweet(json) {
-          var thisQuote = json.value;
-          $("#tweet_btn").attr("href", "https://twitter.com/intent/tweet?text=" + thisQuote + "%0a--- ");
-}
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  }
+})
