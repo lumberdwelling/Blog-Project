@@ -85,17 +85,8 @@ var example1 = new Vue({
   }
 })
 
-new Vue({
+var quotes = new Vue({
   el: '#app',
   data: {
     newQuote: ''
-    tweetQuote: ''
-  }, //https://codepen.io/michaeljcalkins/pen/PqBNre
-  created () {
-    var vm = this
-    quotesondesign.get('hhttp://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1')
-      .then(function (response) {
-        vm.users = response.data
-      })
-  }
-})
+  },
