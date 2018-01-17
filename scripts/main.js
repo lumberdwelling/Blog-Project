@@ -86,7 +86,21 @@ var example1 = new Vue({
 })
 
 var quotes = new Vue({
-  el: '#app',
+  el: '#quotes',
   data: {
     newQuote: ''
   },
+
+  created: function() {
+    this.fetchData();
+  },
+
+  methods: {
+    fetchData: function() {
+      this.$http.get('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1'),
+      function(data) {
+      this.newQuote = data.main.quote;
+    }
+  }
+)
+  }
