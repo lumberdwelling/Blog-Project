@@ -88,7 +88,7 @@ var example1 = new Vue({
 var quotes = new Vue({
   el: '#quotes',
   data: {
-    newQuote: ''
+    newQuote: []
   },
 
   created: function() {
@@ -97,10 +97,9 @@ var quotes = new Vue({
 
   methods: {
     fetchData: function() {
-      var vm = this
-        this.$http.get('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1'),
-        function(data) {
-          this.newQuote = data.main.quote;
-    }
+        this.$http.get('https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?')
+          .then(response => {
+            this.newQuote = response.json()
+    })
   }
 }})
