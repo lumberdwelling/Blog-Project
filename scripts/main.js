@@ -103,3 +103,4 @@ var quotes = new Vue({
     })
   }
 }})
+// https://stackoverflow.com/questions/41234463/how-to-access-an-api-with-vue-js
