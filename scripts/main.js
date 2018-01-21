@@ -88,7 +88,7 @@ var example1 = new Vue({
 var quotes = new Vue({
   el: '#quotes',
   data: {
-    newQuote: []
+    newQuote: ''
   },
 
   created: function() {
